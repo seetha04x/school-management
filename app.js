@@ -2,24 +2,38 @@ const express=require("express");
 const app=express();
 const mysql=require("mysql2");
 const joi=require("joi");
-require("dotenv").config();
+// Load .env file, but don't override existing environment variables
+require("dotenv").config({ override: false });
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+// Support both DB_* (local) and MYSQL* (Railway) environment variable names
+const dbConfig = {
+    host: process.env.DB_HOST || process.env.MYSQLHOST,
+    user: process.env.DB_USER || process.env.MYSQLUSER,
+    password: process.env.DB_PASSWORD || process.env.MYSQLPASSWORD,
+    database: process.env.DB_NAME || process.env.MYSQLDATABASE,
+    port: process.env.DB_PORT || process.env.MYSQLPORT || 3306
+};
+
 // Validate required environment variables
-const requiredEnvVars = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME'];
-const missingVars = requiredEnvVars.filter(v => !process.env[v]);
-if(missingVars.length > 0) {
-    console.error(`Missing required environment variables: ${missingVars.join(', ')}`);
+const requiredKeys = ['host', 'user', 'password', 'database'];
+const missingKeys = requiredKeys.filter(key => !dbConfig[key]);
+if(missingKeys.length > 0) {
+    console.error(`Missing required database configuration: ${missingKeys.join(', ')}`);
+    console.error('Please set environment variables:');
+    console.error('  Local: DB_HOST, DB_USER, DB_PASSWORD, DB_NAME');
+    console.error('  Railway: MYSQLHOST, MYSQLUSER, MYSQLPASSWORD, MYSQLDATABASE');
     process.exit(1);
 }
 
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT || 3306,
+    host: dbConfig.host,
+    user: dbConfig.user,
+    password: dbConfig.password,
+    database: dbConfig.database,
+    port: dbConfig.port,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -28,7 +42,7 @@ const connection = mysql.createConnection({
 connection.connect((err)=>{
     if(err) {
         console.error("Database connection failed:", err.message);
-        console.error("Make sure your MySQL server is running and accessible at:", process.env.DB_HOST);
+        console.error("Attempted connection to:", dbConfig.host);
         process.exit(1);
     }
     console.log("connected to database");

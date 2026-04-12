@@ -8,9 +8,9 @@ services:
       - "3000:3000"
     environment:
       DB_HOST: mysql
-      DB_USER: ${DB_USER:-root}
-      DB_PASSWORD: ${DB_PASSWORD:-password}
-      DB_NAME: ${DB_NAME:-school}
+      DB_USER: root
+      DB_PASSWORD: pswd
+      DB_NAME: school
       DB_PORT: 3306
     depends_on:
       mysql:
@@ -22,8 +22,8 @@ services:
     image: mysql:8.0
     container_name: school-management-db
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-password}
-      MYSQL_DATABASE: ${DB_NAME:-school}
+      MYSQL_ROOT_PASSWORD: pswd
+      MYSQL_DATABASE: school
     ports:
       - "3306:3306"
     volumes:
