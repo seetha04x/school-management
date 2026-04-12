@@ -2,6 +2,7 @@ const express=require("express");
 const app=express();
 const mysql=require("mysql2");
 const joi=require("joi");
+require("dotenv").config();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 const connection = mysql.createConnection({
