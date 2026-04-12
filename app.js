@@ -8,7 +8,7 @@ app.use(express.json());
 const connection = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "pswd",
+    password: process.env.DB_PASSWORD || "yourpassword",
     database: process.env.DB_NAME || "school",
     port: process.env.DB_PORT || 3306
 });
