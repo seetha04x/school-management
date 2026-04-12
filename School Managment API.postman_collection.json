@@ -1,0 +1,381 @@
+{
+  "info": {
+    "_postman_id": "3009fbb5-c1df-4feb-8cbd-1c564da50b1e",
+    "name": "School Managment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53958315",
+    "_collection_link": "https://go.postman.co/collection/53958315-3009fbb5-c1df-4feb-8cbd-1c564da50b1e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "List School",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/listSchools?latitude=10.08&longitude=76.0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "10.08"
+            },
+            {
+              "key": "longitude",
+              "value": "76.0"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "List School Example",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/listSchools?latitude=10.08&longitude=76.0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "listSchools"
+              ],
+              "query": [
+                {
+                  "key": "latitude",
+                  "value": "10.08"
+                },
+                {
+                  "key": "longitude",
+                  "value": "76.0"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "274"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"112-DOryQC1gHQQtYlKVXbuNAAb3uN4\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Apr 2026 19:52:58 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Test Academy\",\n        \"address\": \"123 Main St, Kerala\",\n        \"latitude\": 10.85,\n        \"longitude\": 76.27,\n        \"distance\": 0.8159656855530122\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Global School\",\n        \"address\": \"123 Education Lane, City Center\",\n        \"latitude\": 10.8505,\n        \"longitude\": 76.2711,\n        \"distance\": 0.8168019711043814\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test Academy\",\r\n  \"address\": \"123 Main St, Kerala\",\r\n  \"latitude\": 10.85,\r\n  \"longitude\": 76.27\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/addSchool",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "addSchool"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Global School\",\r\n  \"address\": \"123 Education Lane, City Center\",\r\n  \"latitude\": 10.8505,\r\n  \"longitude\": 76.2711\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/addSchool",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "addSchool"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"27-fgDhqLv/qkFYUmbdcvfLynuAY78\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Apr 2026 19:49:52 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"School Added successfully\"\n}"
+        },
+        {
+          "name": "Incompete Query",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Incomplete School\",\r\n  \"latitude\": 12.34\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/addSchool",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "addSchool"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "37"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"25-B7SlLJXlx+FNZ1sNd2w5OmyrKhs\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Apr 2026 19:51:18 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"\\\"address\\\" is required\"\n}"
+        },
+        {
+          "name": "Validation Error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Error School\",\r\n  \"address\": \"456 Silicon Valley\",\r\n  \"latitude\": \"number\", \r\n  \"longitude\": 77.59\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/addSchool",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "addSchool"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "43"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2b-o4NZmw67eCKmlj76600Q1lsyOLE\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Apr 2026 19:51:51 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"\\\"latitude\\\" must be a number\"\n}"
+        },
+        {
+          "name": "Success Response 2",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Test Academy\",\r\n  \"address\": \"123 Main St, Kerala\",\r\n  \"latitude\": 10.85,\r\n  \"longitude\": 76.27\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/addSchool",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "addSchool"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"27-fgDhqLv/qkFYUmbdcvfLynuAY78\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 12 Apr 2026 19:52:39 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"School Added successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}

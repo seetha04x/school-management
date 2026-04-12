@@ -15,10 +15,9 @@ connection.connect((err)=>{
     if(err) throw err;
     console.log("connected to database");})
     
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+app.listen(3000, ()=>{
+    console.log("listening to 3000");
+})
 const schoolSchema=joi.object({
     name:joi.string().required(),
     address:joi.string().required(),
