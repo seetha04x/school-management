@@ -31,6 +31,10 @@ const schoolSchema=joi.object({
     latitude:joi.number().required(),
     longitude:joi.number().required()
 })
+app.get('/', (req, res) => {
+    res.send('Welcome to the School Management API! Use /listSchools to see data.');
+});
+
 app.post("/addSchool", (req,res)=>{
     const {error,value}=schoolSchema.validate(req.body);
     if(error){
