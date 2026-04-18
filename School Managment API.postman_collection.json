@@ -36,67 +36,93 @@
       },
       "response": [
         {
-          "name": "List School Example",
+          "name": "List School",
           "originalRequest": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/listSchools?latitude=10.08&longitude=76.0",
-              "protocol": "http",
+              "raw": "https://school-management-production-78ad.up.railway.app/listSchools?latitude=10.85&longitude=76.27",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "school-management-production-78ad",
+                "up",
+                "railway",
+                "app"
               ],
-              "port": "3000",
               "path": [
                 "listSchools"
               ],
               "query": [
                 {
                   "key": "latitude",
-                  "value": "10.08"
+                  "value": "10.85"
                 },
                 {
                   "key": "longitude",
-                  "value": "76.0"
+                  "value": "76.27"
                 }
               ]
             }
           },
           "status": "OK",
           "code": 200,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "json",
           "header": [
             {
-              "key": "X-Powered-By",
-              "value": "Express"
+              "key": ":status",
+              "value": 200
             },
             {
-              "key": "Content-Type",
+              "key": "x-railway-cdn-edge",
+              "value": "fastly/cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-type",
               "value": "application/json; charset=utf-8"
             },
             {
-              "key": "Content-Length",
-              "value": "274"
+              "key": "date",
+              "value": "Sat, 18 Apr 2026 06:54:48 GMT"
             },
             {
-              "key": "ETag",
-              "value": "W/\"112-DOryQC1gHQQtYlKVXbuNAAb3uN4\""
+              "key": "etag",
+              "value": "W/\"f7-Z60odAD68UrQuvbzzFb/Eo2s6K0\""
             },
             {
-              "key": "Date",
-              "value": "Sun, 12 Apr 2026 19:52:58 GMT"
+              "key": "server",
+              "value": "railway-edge"
             },
             {
-              "key": "Connection",
-              "value": "keep-alive"
+              "key": "x-powered-by",
+              "value": "Express"
             },
             {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
+              "key": "x-railway-edge",
+              "value": "railway/asia-southeast1-eqsg3a"
+            },
+            {
+              "key": "x-railway-request-id",
+              "value": "0V0HxQeIRLyPvapEJH0Vcg"
+            },
+            {
+              "key": "x-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-cache-hits",
+              "value": "0"
+            },
+            {
+              "key": "x-served-by",
+              "value": "cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-length",
+              "value": "247"
             }
           ],
           "cookie": [],
-          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Test Academy\",\n        \"address\": \"123 Main St, Kerala\",\n        \"latitude\": 10.85,\n        \"longitude\": 76.27,\n        \"distance\": 0.8159656855530122\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Global School\",\n        \"address\": \"123 Education Lane, City Center\",\n        \"latitude\": 10.8505,\n        \"longitude\": 76.2711,\n        \"distance\": 0.8168019711043814\n    }\n]"
+          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Test Academy\",\n        \"address\": \"123 Main St, Kerala\",\n        \"latitude\": 10.85,\n        \"longitude\": 76.27,\n        \"distance\": 0\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Global School\",\n        \"address\": \"123 Main St, Kerala\",\n        \"latitude\": 10.8505,\n        \"longitude\": 76.2711,\n        \"distance\": 0.001208304597367079\n    }\n]"
         }
       ]
     },
@@ -134,7 +160,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"Global School\",\r\n  \"address\": \"123 Education Lane, City Center\",\r\n  \"latitude\": 10.8505,\r\n  \"longitude\": 76.2711\r\n}",
+              "raw": "{\r\n  \"name\": \"Global School\",\r\n  \"address\": \"123 Main St, Kerala\",\r\n  \"latitude\": 10.8505,\r\n  \"longitude\": 76.2711\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -142,12 +168,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/addSchool",
-              "protocol": "http",
+              "raw": "https://school-management-production-78ad.up.railway.app/addSchool",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "school-management-production-78ad",
+                "up",
+                "railway",
+                "app"
               ],
-              "port": "3000",
               "path": [
                 "addSchool"
               ]
@@ -155,35 +183,59 @@
           },
           "status": "Created",
           "code": 201,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "json",
           "header": [
             {
-              "key": "X-Powered-By",
-              "value": "Express"
+              "key": ":status",
+              "value": 201
             },
             {
-              "key": "Content-Type",
+              "key": "x-railway-cdn-edge",
+              "value": "fastly/cache-qap-vomm4700026-QAP"
+            },
+            {
+              "key": "content-type",
               "value": "application/json; charset=utf-8"
             },
             {
-              "key": "Content-Length",
-              "value": "39"
+              "key": "date",
+              "value": "Sat, 18 Apr 2026 06:50:58 GMT"
             },
             {
-              "key": "ETag",
+              "key": "etag",
               "value": "W/\"27-fgDhqLv/qkFYUmbdcvfLynuAY78\""
             },
             {
-              "key": "Date",
-              "value": "Sun, 12 Apr 2026 19:49:52 GMT"
+              "key": "server",
+              "value": "railway-edge"
             },
             {
-              "key": "Connection",
-              "value": "keep-alive"
+              "key": "x-powered-by",
+              "value": "Express"
             },
             {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
+              "key": "x-railway-edge",
+              "value": "railway/asia-southeast1-eqsg3a"
+            },
+            {
+              "key": "x-railway-request-id",
+              "value": "CsKXf0xMQA-_TSqFipRofQ"
+            },
+            {
+              "key": "x-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-cache-hits",
+              "value": "0"
+            },
+            {
+              "key": "x-served-by",
+              "value": "cache-qap-vomm4700026-QAP"
+            },
+            {
+              "key": "content-length",
+              "value": "39"
             }
           ],
           "cookie": [],
@@ -204,12 +256,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/addSchool",
-              "protocol": "http",
+              "raw": "https://school-management-production-78ad.up.railway.app/addSchool",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "school-management-production-78ad",
+                "up",
+                "railway",
+                "app"
               ],
-              "port": "3000",
               "path": [
                 "addSchool"
               ]
@@ -217,35 +271,59 @@
           },
           "status": "Bad Request",
           "code": 400,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "json",
           "header": [
             {
-              "key": "X-Powered-By",
-              "value": "Express"
+              "key": ":status",
+              "value": 400
             },
             {
-              "key": "Content-Type",
+              "key": "x-railway-cdn-edge",
+              "value": "fastly/cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-type",
               "value": "application/json; charset=utf-8"
             },
             {
-              "key": "Content-Length",
-              "value": "37"
+              "key": "date",
+              "value": "Sat, 18 Apr 2026 06:53:16 GMT"
             },
             {
-              "key": "ETag",
+              "key": "etag",
               "value": "W/\"25-B7SlLJXlx+FNZ1sNd2w5OmyrKhs\""
             },
             {
-              "key": "Date",
-              "value": "Sun, 12 Apr 2026 19:51:18 GMT"
+              "key": "server",
+              "value": "railway-edge"
             },
             {
-              "key": "Connection",
-              "value": "keep-alive"
+              "key": "x-powered-by",
+              "value": "Express"
             },
             {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
+              "key": "x-railway-edge",
+              "value": "railway/asia-southeast1-eqsg3a"
+            },
+            {
+              "key": "x-railway-request-id",
+              "value": "ZpgQmR2MTYqHc4DBipRofQ"
+            },
+            {
+              "key": "x-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-cache-hits",
+              "value": "0"
+            },
+            {
+              "key": "x-served-by",
+              "value": "cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-length",
+              "value": "37"
             }
           ],
           "cookie": [],
@@ -266,12 +344,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/addSchool",
-              "protocol": "http",
+              "raw": "https://school-management-production-78ad.up.railway.app/addSchool",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "school-management-production-78ad",
+                "up",
+                "railway",
+                "app"
               ],
-              "port": "3000",
               "path": [
                 "addSchool"
               ]
@@ -279,35 +359,59 @@
           },
           "status": "Bad Request",
           "code": 400,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "json",
           "header": [
             {
-              "key": "X-Powered-By",
-              "value": "Express"
+              "key": ":status",
+              "value": 400
             },
             {
-              "key": "Content-Type",
+              "key": "x-railway-cdn-edge",
+              "value": "fastly/cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-type",
               "value": "application/json; charset=utf-8"
             },
             {
-              "key": "Content-Length",
-              "value": "43"
+              "key": "date",
+              "value": "Sat, 18 Apr 2026 06:53:36 GMT"
             },
             {
-              "key": "ETag",
+              "key": "etag",
               "value": "W/\"2b-o4NZmw67eCKmlj76600Q1lsyOLE\""
             },
             {
-              "key": "Date",
-              "value": "Sun, 12 Apr 2026 19:51:51 GMT"
+              "key": "server",
+              "value": "railway-edge"
             },
             {
-              "key": "Connection",
-              "value": "keep-alive"
+              "key": "x-powered-by",
+              "value": "Express"
             },
             {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
+              "key": "x-railway-edge",
+              "value": "railway/asia-southeast1-eqsg3a"
+            },
+            {
+              "key": "x-railway-request-id",
+              "value": "0EGmgJ2cT4yIdQx8mrpb1w"
+            },
+            {
+              "key": "x-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-cache-hits",
+              "value": "0"
+            },
+            {
+              "key": "x-served-by",
+              "value": "cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-length",
+              "value": "43"
             }
           ],
           "cookie": [],
@@ -328,12 +432,14 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/addSchool",
-              "protocol": "http",
+              "raw": "https://school-management-production-78ad.up.railway.app/addSchool",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "school-management-production-78ad",
+                "up",
+                "railway",
+                "app"
               ],
-              "port": "3000",
               "path": [
                 "addSchool"
               ]
@@ -341,35 +447,59 @@
           },
           "status": "Created",
           "code": 201,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "json",
           "header": [
             {
-              "key": "X-Powered-By",
-              "value": "Express"
+              "key": ":status",
+              "value": 201
             },
             {
-              "key": "Content-Type",
+              "key": "x-railway-cdn-edge",
+              "value": "fastly/cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-type",
               "value": "application/json; charset=utf-8"
             },
             {
-              "key": "Content-Length",
-              "value": "39"
+              "key": "date",
+              "value": "Sat, 18 Apr 2026 06:53:58 GMT"
             },
             {
-              "key": "ETag",
+              "key": "etag",
               "value": "W/\"27-fgDhqLv/qkFYUmbdcvfLynuAY78\""
             },
             {
-              "key": "Date",
-              "value": "Sun, 12 Apr 2026 19:52:39 GMT"
+              "key": "server",
+              "value": "railway-edge"
             },
             {
-              "key": "Connection",
-              "value": "keep-alive"
+              "key": "x-powered-by",
+              "value": "Express"
             },
             {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
+              "key": "x-railway-edge",
+              "value": "railway/asia-southeast1-eqsg3a"
+            },
+            {
+              "key": "x-railway-request-id",
+              "value": "Ob20Iy2tTraf2zSi-8Y8hA"
+            },
+            {
+              "key": "x-cache",
+              "value": "MISS"
+            },
+            {
+              "key": "x-cache-hits",
+              "value": "0"
+            },
+            {
+              "key": "x-served-by",
+              "value": "cache-qap-vomm4700029-QAP"
+            },
+            {
+              "key": "content-length",
+              "value": "39"
             }
           ],
           "cookie": [],
