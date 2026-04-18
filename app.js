@@ -13,11 +13,13 @@ const connection = mysql.createConnection({
     port: process.env.MYSQLPORT || 3306
 });
 connection.connect((err) => {
-    if (err) {
-        console.error("Database connection failed:", err.message);
-        process.exit(1);
+   if (err) {
+        console.error("!!! DATABASE CONNECTION ERROR:", err.message);
+        // We DON'T process.exit(1) here so the app stays "Online" 
+        // and we can read the logs comfortably.
+    } else {
+        console.log("✅ SUCCESS: Connected to Railway MySQL");
     }
-    console.log("Connected to database");
 });
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
